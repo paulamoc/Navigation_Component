@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile">
+
+
+        <fragment
+            android:id="@+id/Register"
+            android:name="com.pau.navigation_component.Register"
+            android:label="@string/main_activity"
+            tools:layout="@layout/register">
+
+            <action
+                android:id="@+id/next_action"
+                app:popUpTo="@layout/match">
+            </action>
+
+        </fragment>
+
+        <fragment
+            android:id="@+id/mach"
+            android:name="com.pau.navigation_component.in_game"
+            tools:layout="@layout/match">
+            <argument
+                android:name="@string/main_activity"
+                app:argType="integer"
+                android:defaultValue="1"/>
+
+            <action
+                android:id="@+id/next_action"
+                app:destination="@+id/in_game">
+            </action>
+        </fragment>
+
+    <fragment
+        android:id="@+id/results"
+        android:name="com.pau.navigation_component.game_over"
+        tools:layout="@layout/results">
+        <argument
+            android:name="@string/main_activity"
+            app:argType="integer"
+            android:defaultValue="1"/>
+
+        <action
+            android:id="@+id/next_action"
+            app:destination="@+id/game_over">
+        </action>
+    </fragment>
+
+        <fragment
+            android:id="@+id/in_game"
+            android:name="com.pau.navigation_component.Register"
+            tools:layout="@layout/in_game">
+
+            <argument
+                android:name="@string/main_activity"
+                app:argType="integer"
+                android:defaultValue="2"/>
+
+            <action
+                android:id="@+id/next_action"
+                app:popUpTo="@layout/results">
+            </action>
+        </fragment>
+
+        <!-- TODO STEP 4 Create a new navigation destination pointing to SettingsFragment -->
+        <!--<fragment-->
+        <!--android:id="@+id/settings_dest"-->
+        <!--android:name="com.example.android.codelabs.navigation.SettingsFragment"-->
+        <!--android:label="@string/settings"-->
+        <!--tools:layout="@layout/settings_fragment" />-->
+        <!-- TODO END STEP 4 -->
+
+        <fragment
+            android:id="@+id/game_over"
+            android:name="com.pau.navigation_component.match"
+            android:label="results"
+            tools:layout="@layout/game_over">
+
+            <argument
+                android:name="myarg"
+                android:defaultValue="Android!"/>
+            <!-- TODO STEP 11.1 - Add a deep link to www.example.com/{myarg}/ -->
+
+            <!--<deepLink app:uri="www.example.com/{myarg}" />-->
+
+            <!-- TODO END STEP 11.1 -->
+        </fragment>
+
+        <action
+            android:id="@+id/next_action3"
+            app:destination="@id/mach"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+        <fragment
+            android:id="@+id/main_activity"
+            android:name="com.pau.navigation_component.Register"
+            android:label="@string/Register"
+            tools:layout="@layout/activity_main"
+            tools:ignore="DuplicateIds">
+
+            <action
+                android:id="@+id/next_action"
+                app:popUpTo="@layout/register">
+            </action>
+
+            <argument
+                android:name="myarg"
+                android:defaultValue="Android!"/>
+
+            <deepLink app:uri="www.example.com/{myarg}" />
+        </fragment>
+
+    </navigation>
+
+
+

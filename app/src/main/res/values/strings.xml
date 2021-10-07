@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Navigation_Component</string>
+    <string name="main_activity">main_activity</string>
+    <string name="Register">register</string>
+</resources>

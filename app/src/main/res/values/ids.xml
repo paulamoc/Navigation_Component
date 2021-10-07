@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="btn_play" type="id">play</item>
+    <item name="args_edit_text" type="id">args</item>
+    <item name="send_notification_button" type="id">send</item>
+</resources>

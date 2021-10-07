@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list android:opacity="opaque"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:drawable="@color/purple_200"/>
+
+    <item
+        android:left="10dp"
+        android:right="10dp">
+
+        <bitmap
+            android:src="@drawable/dadouno"/>
+
+    </item>
+
+
+    </layer-list >
